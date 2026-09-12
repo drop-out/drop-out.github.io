@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lei ZANG (臧雷) — Homepage</title>
+<meta name="description" content="Lei ZANG (臧雷), LLM Algorithm Expert at Ant Group, Master's Supervisor at Xiamen University. Research on LLM post-training, RL, and agents.">
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --muted: #5b5b73;
+    --accent: #1a56db;
+    --accent-soft: #eaf0fe;
+    --line: #e5e7f0;
+    --bg: #ffffff;
+    --card: #f7f9ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial,
+      "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.7;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 22px 80px; }
+  header.hero {
+    display: flex; gap: 28px; align-items: flex-start;
+    padding: 52px 0 26px;
+    border-bottom: 2px solid var(--ink);
+    flex-wrap: wrap;
+  }
+  .avatar {
+    width: 128px; height: 128px; border-radius: 50%;
+    background: linear-gradient(135deg, #1a56db, #7c3aed);
+    color: #fff; font-size: 40px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; letter-spacing: 1px;
+  }
+  .hero-text h1 { margin: 0; font-size: 34px; letter-spacing: .5px; }
+  .hero-text h1 .cn { font-weight: 400; font-size: 24px; color: var(--muted); margin-left: 10px; }
+  .tagline { margin: 8px 0 4px; font-size: 17px; }
+  .affil { color: var(--muted); margin: 2px 0; font-size: 15px; }
+  .links { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .links a {
+    display: inline-block; padding: 4px 14px; border-radius: 999px;
+    border: 1px solid var(--accent); color: var(--accent);
+    text-decoration: none; font-size: 14px; font-weight: 600;
+  }
+  .links a:hover { background: var(--accent); color: #fff; }
+  nav.toc {
+    position: sticky; top: 0; background: rgba(255,255,255,.96);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 0; margin: 0 -22px; padding-left: 22px; padding-right: 22px;
+    font-size: 14px; z-index: 10;
+  }
+  nav.toc a { color: var(--muted); text-decoration: none; margin-right: 18px; font-weight: 600; }
+  nav.toc a:hover { color: var(--accent); }
+  section { padding: 30px 0 6px; }
+  section h2 {
+    font-size: 22px; margin: 0 0 14px;
+    padding-bottom: 6px; border-bottom: 1px solid var(--line);
+  }
+  .item { margin-bottom: 18px; }
+  .item .head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .item .title { font-weight: 700; }
+  .item .time { color: var(--muted); white-space: nowrap; font-size: 14px; }
+  .item .detail { color: #33334d; font-size: 15px; }
+  .item .detail a, .pub a, .honor a, p a { color: var(--accent); text-decoration: none; }
+  .item .detail a:hover, .pub a:hover, .honor a:hover, p a:hover { text-decoration: underline; }
+  .pub {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 16px 18px; margin-bottom: 16px;
+  }
+  .pub .p-title { font-weight: 700; font-size: 16.5px; }
+  .pub .p-title a { color: var(--ink); }
+  .pub .p-title a:hover { color: var(--accent); }
+  .pub .p-authors { font-size: 15px; margin-top: 4px; }
+  .pub .p-authors b { font-weight: 700; }
+  .pub .p-venue { color: var(--muted); font-size: 14px; font-style: italic; margin-top: 2px; }
+  .pub .p-note { font-size: 13.5px; margin-top: 6px; }
+  .badge {
+    display: inline-block; font-size: 12px; font-weight: 700;
+    padding: 1px 9px; border-radius: 999px; margin-left: 8px;
+    vertical-align: middle; white-space: nowrap;
+  }
+  .badge.co { background: #e6f4ea; color: #137333; border: 1px solid #b7dfc0; }
+  .badge.cor { background: var(--accent-soft); color: var(--accent); border: 1px solid #c3d4fb; }
+  .venue-tag {
+    display: inline-block; font-size: 14px; font-weight: 800; letter-spacing: .4px;
+    background: var(--ink); color: #fff;
+    padding: 2px 12px; border-radius: 6px; margin-bottom: 8px;
+  }
+  .p-links { margin-top: 8px; font-size: 14px; }
+  .p-links a { margin-right: 14px; font-weight: 600; }
+  .honor { margin-bottom: 20px; }
+  .honor .h-title { font-weight: 700; }
+  .honor .h-title .place {
+    display: inline-block; font-size: 12.5px; font-weight: 700;
+    background: #fff7e0; color: #8a5a00; border: 1px solid #f0d48a;
+    border-radius: 999px; padding: 1px 10px; margin-left: 8px; vertical-align: middle;
+  }
+  .honor ul { margin: 6px 0 0 20px; padding: 0; font-size: 15px; color: #33334d; }
+  .honor li { margin-bottom: 3px; }
+  .note-box {
+    background: #fffdf3; border: 1px dashed #d9b93c; border-radius: 10px;
+    padding: 10px 14px; font-size: 14px; color: #5c4a00; margin-top: 8px;
+  }
+  @media (max-width: 600px) {
+    header.hero { padding-top: 34px; }
+    .hero-text h1 { font-size: 27px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="avatar">LZ</div>
+    <div class="hero-text">
+      <h1>Lei ZANG<span class="cn">臧雷</span></h1>
+      <p class="tagline">LLM Algorithm Expert, Ant Group · Master's Supervisor, Xiamen University</p>
+      <p class="affil">Ant Group — RL post-training of <a href="https://huggingface.co/collections/inclusionAI/ling-30">Ling-series</a> LLMs for <a href="https://www.lingguang.com/">LingGuang</a></p>
+      <p class="affil">Xiamen University — Supervisor of Master of Applied Statistics</p>
+      <p class="affil">Email: <a href="mailto:zanglei.zl@antgroup.com">zanglei.zl@antgroup.com</a></p>
+      <div class="links">
+        <a href="https://orcid.org/0009-0005-8869-6034">ORCID</a>
+        <a href="https://scholar.google.com/citations?user=BvNvbrMAAAAJ">Google Scholar</a>
+        <a href="https://github.com/drop-out">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <a href="#about">About</a>
+    <a href="#positions">Positions</a>
+    <a href="#education">Education</a>
+    <a href="#publications">Publications</a>
+    <a href="#honors">Honors</a>
+  </nav>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I am <b>Lei ZANG (臧雷)</b>, an LLM Algorithm Expert at
+      <b>Ant Group</b>, working on RL post-training of <a href="https://huggingface.co/collections/inclusionAI/ling-30">Ling-series</a> large language
+      models for <a href="https://www.lingguang.com/">LingGuang</a>.
+      Since 2023 I have also served as a Master's Supervisor of
+      Applied Statistics at <b>Xiamen University</b>.
+      My research interests include LLM post-training, reinforcement learning,
+      and long-horizon agents.
+    </p>
+    <p>
+      Profiles:
+      <a href="https://orcid.org/0009-0005-8869-6034">ORCID 0009-0005-8869-6034</a>
+      ·
+      <a href="https://scholar.google.com/citations?user=BvNvbrMAAAAJ">Google Scholar</a>
+      ·
+      <a href="https://github.com/drop-out">GitHub @drop-out</a>
+    </p>
+  </section>
+
+  <section id="positions">
+    <h2>Positions</h2>
+    <div class="item">
+      <div class="head">
+        <span class="title">Ant Group — LLM Algorithm Expert</span>
+        <span class="time">2019 — Present</span>
+      </div>
+      <div class="detail">
+        Responsible for RL post-training of <a href="https://huggingface.co/collections/inclusionAI/ling-30">Ling-series</a> LLMs for
+        <a href="https://www.lingguang.com/">LingGuang</a>.
+      </div>
+    </div>
+    <div class="item">
+      <div class="head">
+        <span class="title">Xiamen University — Master's Supervisor, Applied Statistics</span>
+        <span class="time">2023 — Present</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="item">
+      <div class="head">
+        <span class="title">Xiamen University — Master of Finance</span>
+        <span class="time">2019</span>
+      </div>
+      <div class="detail">
+        Wang Yanan Institute for Studies in Economics (WISE), Xiamen University.
+        Advisor: Prof. Wei Zhong (钟威).
+        Thesis: <i>Volatility Indicator Construction via Deep Learning and the Application of Multiple Volatility Indicators</i>.
+      </div>
+    </div>
+    <div class="item">
+      <div class="head">
+        <span class="title">Fordham University — Master of Science in Finance</span>
+        <span class="time">2018</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <div class="pub">
+      <div><span class="venue-tag">ACL 2024</span></div>
+      <div class="p-title">
+        <a href="https://aclanthology.org/2024.acl-demos.30/">CharPoet: A Chinese Classical Poetry Generation System Based on Token-free LLM</a>
+        <span class="badge co">* Equal contribution</span>
+        <span class="badge cor">† Corresponding author</span>
+      </div>
+      <div class="p-authors">Chengyue Yu*†, <b>Lei Zang*†</b>, Jiaotuan Wang, Chenyi Zhuang, Jinjie Gu</div>
+      <div class="p-venue">Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics, Volume 3: System Demonstrations (ACL 2024)</div>
+      <div class="p-note">Token-free, character-by-character generation for precise format control (format accuracy &gt; 0.96); open-sourced on ModelScope; demo video on YouTube.</div>
+      <div class="p-links">
+        <a href="https://aclanthology.org/2024.acl-demos.30/">[ACL Anthology]</a>
+        <a href="https://arxiv.org/abs/2401.03512">[arXiv]</a>
+        <a href="https://doi.org/10.18653/v1/2024.acl-demos.30">[DOI]</a>
+        <a href="https://orcid.org/0009-0005-8869-6034">[ORCID record]</a>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div><span class="venue-tag">EMNLP 2026</span></div>
+      <div class="p-title">
+        <a href="https://arxiv.org/abs/2608.29685">Last Step Matters: Early Uncertainty Cannot Predict Failure in Long-Horizon Agents</a>
+        <span class="badge co">* Equal contribution</span>
+      </div>
+      <div class="p-authors">Zongyue Li*, Chengyue Yu*, <b>Lei Zang*</b>, Chenyi Zhuang, Linjian Mo, Leilei Gan†</div>
+      <div class="p-venue">Main Conference of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP 2026)</div>
+      <div class="p-links">
+        <a href="https://arxiv.org/abs/2608.29685">[arXiv]</a>
+        <a href="https://orcid.org/0009-0005-8869-6034">[ORCID record]</a>
+      </div>
+    </div>
+
+    <p style="font-size:14px;color:var(--muted)">* equal contribution; † corresponding author. Full records on
+      <a href="https://orcid.org/0009-0005-8869-6034">ORCID</a> and
+      <a href="https://scholar.google.com/citations?user=BvNvbrMAAAAJ">Google Scholar</a>.
+    </p>
+  </section>
+
+  <section id="honors">
+    <h2>Honors &amp; Awards</h2>
+
+    <div class="honor">
+      <div class="h-title">2017 CCF BDCI (CCF Big Data &amp; Computing Intelligence Contest) <span class="place">🏆 Champion · 1st-Place Solution</span></div>
+      <ul>
+        <li>Competition: <a href="https://tianchi.aliyun.com/competition/entrance/231620">Tianchi — WiFi Positioning</a></li>
+        <li>Winning solution: <a href="https://github.com/drop-out/Tianchi-Wifi-Positioning">drop-out/Tianchi-Wifi-Positioning</a></li>
+      </ul>
+    </div>
+
+    <div class="honor">
+      <div class="h-title">2017 IJCAI Data Mining Contest <span class="place">🥉 3rd-Place Solution</span></div>
+      <ul>
+        <li>Competition: <a href="https://ijcai-17.org/competitions.html">IJCAI-17 Contests</a> · <a href="https://tianchi.aliyun.com/competition/entrance/231591">Tianchi entrance</a></li>
+      </ul>
+    </div>
+
+    <div class="honor">
+      <div class="h-title">2018 China Collegiate Computing Contest — Big Data Challenge <span class="place">🏆 Champion · 1st-Place Solution</span></div>
+      <ul>
+        <li>China Collegiate Computing Contest — Big Data Challenge (2018 CCF 中国高校计算机大赛——大数据挑战赛)</li>
+        <li>Leaderboard: <a href="https://www.heywhale.com/home/competition/5ab8c36a8643e33f5138cba4/leaderboard">HeyWhale competition leaderboard</a></li>
+        <li>Winning solution: <a href="https://github.com/drop-out/RNN-Active-User-Forecast">drop-out/RNN-Active-User-Forecast</a></li>
+      </ul>
+      <div class="note-box">
+        The winning approach used an <b>RNN many-to-many</b> architecture with <b>step-by-step forecasting</b> —
+        predicting each future step sequentially — which is strikingly similar to today's
+        <b>next-token prediction</b> paradigm of large language models.
+      </div>
+    </div>
+
+    <div class="honor">
+      <div class="h-title">2019 National Outstanding Finance Master's Thesis <span class="place">Nomination</span></div>
+      <ul>
+        <li>6th National Outstanding Finance Master's Thesis Award (第六届全国优秀金融硕士学位论文), among 149 theses nationwide — 30 winners + 15 nominations.</li>
+        <li>Thesis: <i>Volatility Indicator Construction via Deep Learning and the Application of Multiple Volatility Indicators</i>.</li>
+        <li>Coverage: <a href="https://wise.xmu.edu.cn/info/1831/150321.htm">WISE, Xiamen University news report</a></li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
